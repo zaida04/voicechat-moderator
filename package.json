@@ -4,7 +4,9 @@
   "description": "Protect your server's voice channels with ease.",
   "main": "src/index.js",
   "scripts": {
-    "test": "nodemon src/index.js --exec \\\"npm run lint && node\\\""
+    "start": "node src/index.js",
+    "test": "nodemon --exec \"npm run lint && node src/index.js\"",
+    "lint": "npx eslint src/ config.js --fix"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,12 @@
   },
   "homepage": "https://github.com/zaida04/VoiceChat-Moderator#readme",
   "devDependencies": {
-    "eslint": "^7.4.0"
+    "eslint": "^7.4.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
   }
 }
