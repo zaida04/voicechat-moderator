@@ -1,0 +1,22 @@
+{
+  "name": "voicechat-moderator",
+  "version": "1.0.0",
+  "description": "Protect your server's voice channels with ease.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nodemon src/index.js --exec \\\"npm run lint && node\\\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaida04/VoiceChat-Moderator.git"
+  },
+  "author": "Zaid, Nico",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zaida04/VoiceChat-Moderator/issues"
+  },
+  "homepage": "https://github.com/zaida04/VoiceChat-Moderator#readme",
+  "devDependencies": {
+    "eslint": "^7.4.0"
+  }
+}
