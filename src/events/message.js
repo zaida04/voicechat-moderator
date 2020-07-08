@@ -1,7 +1,7 @@
-const incorrectUsageEmbed = require("../functions/incorrectUsageEmbed");
+const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
 
 module.exports = async message => {
-	let prefix = message.client.settings.prefix;
+	let prefix = message.client.settings.prefix || "!";
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

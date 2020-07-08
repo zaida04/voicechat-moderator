@@ -9,7 +9,7 @@ module.exports = async client => {
 			if (!event.endsWith(".js")) return;
 			const evt = require(`../events/${event}`);
 			let evtName = event.split(".")[0];
-			console.log(`Loaded ${evtName}.js`);
+			console.log(`Loaded the event ${evtName}`.green);
 			client.on(evtName, evt.bind(null));
 		});
 	} catch (e) {
