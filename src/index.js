@@ -11,7 +11,8 @@ client.on("ready", async () => {
 		client.settings = await (new settingsProvider()).init();
 		await require("./Internals/loadEvents.js")(client);
 		await require("./Internals/loadCommands.js")(client);
-		console.log(colors.brightGreen(`VoiceChat Moderator has been logged in as ${client.user.tag}.\nMain Guild: ${client.guilds.cache.get(main_guild).name}`));
+		console.log(`\n\nVoiceChat Moderator has been logged in as ${client.user.tag}.\nMain Guild: ${client.guilds.cache.get(main_guild).name}\n\n`.brightBlue);
+		require("log-timestamp");
 	} catch(e) {
 		console.log(colors.red(`An error occured on starting up, process terminated. ${e}`));
 		process.exit();
