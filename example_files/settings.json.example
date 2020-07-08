@@ -1,3 +1,5 @@
 {
-	"prefix": "!"
+	"prefix": "!",
+	"decibel": 50,
+	"punishment": "vc_mute" //options are vc_mute, vc_kick, g_kick, g_ban, g_mute
 }

@@ -2,15 +2,14 @@ const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
 
 module.exports = async message => {
 	let prefix = message.client.settings.prefix || "!";
+	if (!message.content.startsWith(prefix) || message.author.bot || message.guild.id !== message.client.main_guild) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 	if (!command) return;
-
 	if (command.guildOnly && message.channel.type !== "text") {
 		return message.reply(new incorrectUsageEmbed("Sorry, but you can't execute that command inside DMs!"));
 	}
-	if ((message.guild.id !== message.client.main_guild) || !(message.content.startsWith(prefix))) return;
 	//if the command *has* a required permissions array, and the executor does not have these said permissions, do not continue
 	if (command.permissions && !message.member.hasPermission(command.permissions, false, true, true)) {
 		return message.reply(new incorrectUsageEmbed(`Sorry, but you do not have the permissions: ${command.permissions.join(", ")}`));

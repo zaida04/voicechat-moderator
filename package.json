@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/zaida04/VoiceChat-Moderator#readme",
   "nodemonConfig": {
-    "ignore": ["settings.json"]
+    "ignore": [
+      "settings.json"
+    ]
   },
   "devDependencies": {
     "eslint": "^7.4.0",

@@ -8,7 +8,7 @@ client.commands = new Collection();
 client.main_guild = main_guild;
 client.on("ready", async () => {
 	try {
-		console.log(await (new settingsProvider()).init());
+		client.settings = await (new settingsProvider()).init();
 		await require("./Internals/loadEvents.js")(client);
 		await require("./Internals/loadCommands.js")(client);
 		console.log(colors.brightGreen(`VoiceChat Moderator has been logged in as ${client.user.tag}.\nMain Guild: ${client.guilds.cache.get(main_guild).name}`));
