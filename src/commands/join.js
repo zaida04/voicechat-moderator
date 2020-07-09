@@ -16,9 +16,27 @@ module.exports = {
 			return message.channel.send(new successEmbed(`Successfully joined ${mentioned_channel.name}`));
 		}
 		if (message.member.voice.channel) {
-			await message.member.voice.channel.join();
+			let connection = await message.member.voice.channel.join();
+			let stream = connection.receiver.createStream(message.member, {"mode": "pcm", "end": "silence"});
+			console.log(getVolume(stream));
 			return message.channel.send(new successEmbed(`Successfully joined ${message.member.voice.channel}`, message));
 		}
 		return message.channel.send(new incorrectUsageEmbed("You must either be in a voice channel, or give the id of a voice channel with members in it."));
 	}
 };
+
+function getVolume(buffer) {
+	let total = 0;
+	let notn = [];
+	for (let i = 0; i < buffer.length / 2; i += 2) {
+		let uint = Math.floor(buffer.readInt16LE(i));
+		notn.push(uint);
+		total++;
+	}
+
+	for (let i = 0; i < notn.length; i++) {
+		total += notn[i];
+	}
+
+	return total / notn.length;
+}
