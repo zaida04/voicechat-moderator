@@ -15,7 +15,8 @@ class ConnectionsManager {
 		if (!this.guilds.has(guild.id)) {
 			let guild_connection = new GuildConnections({
 				"guild": guild,
-				"connection": guild.me.voice.connection
+				"connection": guild.me.voice.connection,
+				"activeChannel": guild.me.voice.channel
 			});
 			this.guilds.set(guild.id, guild_connection);
 			return guild_connection;

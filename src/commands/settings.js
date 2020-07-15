@@ -1,5 +1,3 @@
-const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
-
 let punishment_options = ["vc_mute", "vc_kick", "g_kick", "g_ban", "g_mute"];
 
 module.exports = {
@@ -8,6 +6,7 @@ module.exports = {
 	"category": "admin",
 	"description": "Change the settings of the bot.",
 	"execute": async (message, [option, setvalue]) => {
+		let { incorrectUsageEmbed } = message.client.utilities;
 		let response;
 		let changed;
 		switch (option) {
@@ -28,17 +27,17 @@ module.exports = {
 			} else response = `Punishment: \`${message.client.settings.punishment}\``;
 			break;
 		}
-		case "decibel": {
+		case "threshold": {
 			if (setvalue) {
 				if (setvalue == message.client.settings.decibel) return message.channel.send(new incorrectUsageEmbed("That is already the existing value!"));
-				if(isNaN(setvalue) || (parseInt(setvalue) > 100 || parseInt(setvalue) < 0)) return message.channel.send(new incorrectUsageEmbed("Sorry, but the decibel count must be a valid integer between 0 and 100 db"));
+				if (setvalue !== "low" && setvalue !== "medium" && setvalue !== "high") return message.channel.send(new incorrectUsageEmbed("You can only set the threshold to either `low`, `medium`, or `high`"));
 				message.client.settings.decibel = setvalue;
-				changed = `Decibel Level has been changed to: \`${setvalue}\``;
-			} else response = `Decibel Level: \`${message.client.settings.decibel}db\``;
+				changed = `Threshold Level has been changed to: \`${setvalue}\``;
+			} else response = `Threshold Level: \`${message.client.settings.decibel}\``;
 			break;
 		}
 		default: {
-			return message.channel.send(`Settings options: \`prefix\`, \`punishment\`, \`decibel\`.\nYou can do \`${message.client.settings.prefix}settings [option]\` to see what the current value is for that option.`);
+			return message.channel.send(`Settings options: \`prefix\`, \`punishment\`, \`threshold\`.\nYou can do \`${message.client.settings.prefix}settings [option]\` to see what the current value is for that option.`);
 		}
 		}
 		if(changed) {
