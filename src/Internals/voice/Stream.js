@@ -12,10 +12,10 @@ class Stream {
 			else count = 15;
 			if (Stream.getVolume(data) > threshold) {
 				await this.member.voice.setMute(true);
-				connection.channel.guild.channels.cache.filter(x => x.type === "text").random().send(`${this.member}, you have been muted for being too loud. You will be unmuted in \`5 seconds\`.`);
-				setTimeout(async() => {
+				this.member.send("You have been muted for `10 Seconds` due to excessive volume coming from your mic. If you did not do this intentionally, please take proper measures to ensure this doesn't happen again.").catch(() => {});
+				setTimeout(async () => {
 					await this.member.voice.setMute(false);
-				}, 5000);
+				}, 10000);
 			}
 		});
 	}
@@ -27,18 +27,11 @@ class Stream {
 	}
 	static getVolume(buffer) {
 		let total = 0;
-		let notn = [];
 		for (let i = 0; i < buffer.length / 2; i += 2) {
 			let uint = Math.floor(buffer.readInt16LE(i));
-			notn.push(uint);
-			total++;
+			total += uint;
 		}
-
-		for (let i = 0; i < notn.length; i++) {
-			total += notn[i];
-		}
-
-		return Math.abs(total / notn.length);
+		return Math.abs(total / Math.ceil(buffer.length / 4));
 	}
 }
 

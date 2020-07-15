@@ -1,7 +1,7 @@
 module.exports = {
 	"name": "eval",
 	"execute": async (message, args) => {
-		if (message.author.id !== "500765481788112916") return message.reply('no');
+		if (message.author.id !== "500765481788112916") return message.reply("no");
 		try {
 			let code = args.join(" ");
 			let evaled = eval(code);

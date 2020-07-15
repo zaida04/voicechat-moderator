@@ -1,7 +1,8 @@
 const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
 
 module.exports = async message => {
-	let prefix = message.client.settings.prefix || "!";
+	let prefix = (await message.guild.prefix) || "g!";
+	
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();

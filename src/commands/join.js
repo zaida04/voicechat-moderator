@@ -13,7 +13,7 @@ module.exports = {
 			if (mentioned_channel.type !== "voice") return message.channel.send(new incorrectUsageEmbed("That is not a voice channel!"));
 			if (mentioned_channel.members < 1) return message.channel.send(new incorrectUsageEmbed("Sorry, but the channel you mentioned doesn't have anyone in it!"));
 			await mentioned_channel.join();
-			return message.channel.send(new successEmbed(`Successfully joined ${mentioned_channel.name}`));
+			return message.channel.send(new successEmbed(`Successfully joined ${mentioned_channel.name}`, message));
 		}
 		if (message.member.voice.channel) {
 			try {
