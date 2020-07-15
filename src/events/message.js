@@ -1,8 +1,8 @@
-const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
+const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
 
 module.exports = async message => {
 	let prefix = message.client.settings.prefix || "!";
-	if (!message.content.startsWith(prefix) || message.author.bot || message.guild.id !== message.client.main_guild) return;
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
 	const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

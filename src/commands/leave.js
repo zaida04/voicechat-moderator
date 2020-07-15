@@ -1,5 +1,5 @@
-const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
-const successEmbed = require("../internals/successEmbed");
+const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
+const successEmbed = require("../internals/embed/successEmbed");
 
 module.exports = {
 	"name": "leave",

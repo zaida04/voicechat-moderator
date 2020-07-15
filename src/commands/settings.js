@@ -1,4 +1,4 @@
-const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
+const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
 
 let punishment_options = ["vc_mute", "vc_kick", "g_kick", "g_ban", "g_mute"];
 

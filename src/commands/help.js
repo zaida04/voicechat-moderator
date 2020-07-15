@@ -1,4 +1,4 @@
-const incorrectUsageEmbed = require("../internals/incorrectUsageEmbed");
+const incorrectUsageEmbed = require("../internals/embed/incorrectUsageEmbed");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {

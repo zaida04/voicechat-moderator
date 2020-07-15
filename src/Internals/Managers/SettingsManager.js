@@ -1,11 +1,11 @@
 const {
 	readFile,
 	writeFileSync
-} = require("./fileInteraction");
+} = require("../load/fileInteraction");
 
-class settingsProvider {
+class SettingsProvider {
 	constructor() {
-		this.settings_path = `${__dirname}/../../settings.json`;
+		this.settings_path = `${__dirname}/../../../settings.json`;
 	}
 	async init() {
 		let temp = JSON.parse(await readFile(this.settings_path));
@@ -52,4 +52,4 @@ class settingsProvider {
 	}
 }
 
-module.exports = settingsProvider;
+module.exports = SettingsProvider;
