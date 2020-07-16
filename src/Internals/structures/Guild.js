@@ -10,31 +10,25 @@ Structures.extend("Guild", Guild => {
 		get prefix() {
 			return getPrefix(this.client, this.id);
 		}
-		set prefix(value) {
-			(async () => {
-				await this.client.db.guilds.edit(this.id, {
-					"prefix": value
-				});
+		setPrefix(value) {
+			return this.client.db.guilds.edit(this.id, {
+				"prefix": value
 			});
 		}
 		get threshold() {
 			return getThreshold(this.client, this.id);
 		}
-		set threshold(value) {
-			(async () => {
-				await this.client.db.guilds.edit(this.id, {
-					"threshold": value
-				});
+		setThreshold(value) {
+			return this.client.db.guilds.edit(this.id, {
+				"threshold": value
 			});
 		}
 		get punishment() {
 			return getPunishment(this.client, this.id);
 		}
-		set punishment(value) {
-			(async () => {
-				await this.client.db.guilds.edit(this.id, {
-					"punishment": value
-				});
+		setPunishment(value) {
+			return this.client.db.guilds.edit(this.id, {
+				"punishment": value
 			});
 		}
 		get settings() {

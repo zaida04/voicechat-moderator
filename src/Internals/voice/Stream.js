@@ -1,15 +1,18 @@
 class Stream {
 	constructor(connection, id) {
+		this._connection = connection;
 		this._stream = connection.receiver.createStream(id, {
 			"mode": "pcm",
 			"end": "manual"
 		});
 		this._member = connection.channel.members.get(id);
-		let threshold = connection.client.settings.decibel === "high" ? 2000 : connection.client.settings.decibel === "medium" ? 1750 : 1500;
-		let count = 15;
+	}
+	async init() {
+		let threshold = (await this.connection.channel.guild.threshold) === "high" ? 2000 : (await this.connection.channel.guild.threshold) === "medium" ? 1750 : 1500;
+		let count = 5;
 		this.stream.on("data", async (data) => {
-			if (count !== 0) return count--;
-			else count = 15;
+			if(count !== 0) count--;
+			else count = 5;
 			if (Stream.getVolume(data) > threshold) {
 				await this.member.voice.setMute(true);
 				this.member.send("You have been muted for `10 Seconds` due to excessive volume coming from your mic. If you did not do this intentionally, please take proper measures to ensure this doesn't happen again.").catch(() => {});
@@ -18,6 +21,10 @@ class Stream {
 				}, 10000);
 			}
 		});
+		return this;
+	}
+	get connection() {
+		return this._connection;
 	}
 	get member() {
 		return this._member;

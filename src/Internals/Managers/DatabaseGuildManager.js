@@ -3,10 +3,10 @@ class DatabaseGuildManager {
 	constructor() {
 
 	}
-	async get(id) {
+	get(id) {
 		return Guild.findById(id);
 	}
-	async create(id) {
+	create(id) {
 		return (new Guild({
 			"_id": id,
 			"settings": {
@@ -18,12 +18,12 @@ class DatabaseGuildManager {
 	}
 	async edit(id, {prefix = null, threshold = null, punishment = null}) {
 		let update = {};
-		prefix ? update["prefix"] : null;
-		threshold ? update["threshold"] : null;
-		punishment ? update["punishment"] : null;
-		return Guild.findByIdAndUpdate(id, update);
+		prefix ? update["settings.prefix"] = prefix : null;
+		threshold ? update["settings.threshold"] = threshold: null;
+		punishment ? update["settings.punishment"] = punishment: null;
+		return await Guild.findByIdAndUpdate(id, update);
 	}
-	async delete(id) {
+	delete(id) {
 		return Guild.findByIdAndDelete(id);
 	}
 }
