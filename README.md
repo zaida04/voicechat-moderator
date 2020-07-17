@@ -6,6 +6,6 @@
 ## Where do I invite it? 
   [http://invite.voice.smld.xyz/](http://invite.voice.smld.xyz/)
 ## Is this Open Source?
-  No, it is not open source at the current moment in order to protect the work that we have put time into. However we do plan on making it open source in the future.
+  Yes, it is open source. You can find the repository at [here](https://github.com/zaida04/VoiceChat-Moderator). However, we do not give self-hosting support.
 ## I need help
   You can join our support server at: [https://discord.gg/jf66UUN](https://discord.gg/jf66UUN). And be sure to read the rules!
