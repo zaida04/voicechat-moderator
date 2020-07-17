@@ -1,20 +1,11 @@
 # VoiceChat Moderator
-[![DeepScan grade](https://deepscan.io/api/teams/7103/projects/12730/branches/200710/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=7103&pid=12730&bid=200710) [![GitHub license](https://img.shields.io/github/license/zaida04/VoiceChat-Moderator.svg)](https://github.com/zaida04/VoiceChat-Moderator/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/zaida04/VoiceChat-Moderator.svg)](https://GitHub.com/zaida04/VoiceChat-Moderator/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/zaida04/VoiceChat-Moderator.svg)](https://GitHub.com/zaida04/VoiceChat-Moderator/pull/) [![GitHub forks](https://img.shields.io/github/forks/zaida04/VoiceChat-Moderator.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/zaida04/VoiceChat-Moderator/network/)  
-Protect your server's voice channels with ease.
-
 ## What is VoiceChat Moderator?
-VCM is a discord bot with the sole purpose of preventing things such as "earrape", "bass boosting", or any other obnoxious intrusion in a public discord voice channel.
-
-## Commands
-|  Command |           Usage          |      Aliases      |                                     Description                                     |
-|:--------:|:------------------------:|:-----------------:|:-----------------------------------------------------------------------------------:|
-|   join   |       [id/mention]       | joinvc, vc, start | Join a mentioned voice channel, or a voice channel that the command executor is in. |
-| settings | [option] [option-params] |  setting, config  |                         change certain settings of the bot.                         |
-|   leave  |                          |        exit       |              Have the bot leave the currently connected voice channel.              |
-
-## Contributing
-All contributions are welcome, just open a PR!
-
-## Licensing 
-
-[MIT](https://github.com/zaida04/VoiceChat-Moderator/blob/master/LICENSE)
+  VoiceChat Moderator is a Discord Bot that improves the quality of voice channels by removing the possibility of things such as "earrape", "bass boosting", or any other things that cause an impleasant experience for those in a voice channel.
+## What are the commands?
+  You can find a full list of commands [here](http://voice.smld.xyz/commands):
+## Where do I invite it? 
+  [http://invite.voice.smld.xyz/](http://invite.voice.smld.xyz/)
+## Is this Open Source?
+  No, it is not open source at the current moment in order to protect the work that we have put time into. However we do plan on making it open source in the future.
+## I need help
+  You can join our support server at: [https://discord.gg/jf66UUN](https://discord.gg/jf66UUN). And be sure to read the rules!
