@@ -22,6 +22,9 @@ VCM is a discord bot with the sole purpose of preventing things such as "earrape
 ## Contributing
 All contributions are welcome, just open a PR!
 
+## Website
+We have a website made with Github Pages [here](http://voice.smld.xyz)
+
 ## Licensing 
 
 [MIT](https://github.com/zaida04/VoiceChat-Moderator/blob/master/LICENSE)
