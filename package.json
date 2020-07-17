@@ -4,6 +4,7 @@
   "description": "Protect your server's voice channels with ease.",
   "main": "src/index.js",
   "scripts": {
+    "preinstall": "npm config set msvs_version 2015",
     "start": "node src/index.js",
     "test": "nodemon --exec \"npm run lint && node src/index.js\"",
     "lint": "npx eslint src/ config.js --fix"
