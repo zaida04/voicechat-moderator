@@ -10,14 +10,18 @@ class Stream {
 	async init() {
 		let threshold = (await this.connection.channel.guild.threshold) === "high" ? 2000 : (await this.connection.channel.guild.threshold) === "medium" ? 1750 : 1500;
 		let count = 5;
+		let muted = false;
 		this.stream.on("data", async (data) => {
-			if(count !== 0) count--;
+			if (count !== 0) return count--;
 			else count = 5;
+			if (muted) return;
 			if (Stream.getVolume(data) > threshold) {
+				muted = true;
 				await this.member.voice.setMute(true);
 				this.member.send("You have been muted for `10 Seconds` due to excessive volume coming from your mic. If you did not do this intentionally, please take proper measures to ensure this doesn't happen again.").catch(() => {});
 				setTimeout(async () => {
 					await this.member.voice.setMute(false);
+					muted = false;
 				}, 10000);
 			}
 		});

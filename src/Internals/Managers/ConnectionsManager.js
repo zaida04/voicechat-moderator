@@ -16,7 +16,7 @@ class ConnectionsManager {
 			let guild_connection = new GuildConnections({
 				"guild": guild,
 				"connection": guild.me.voice.connection,
-				"activeChannel": guild.me.voice.channel
+				"activeChannel": guild.me.voice.channel.id
 			});
 			this.guilds.set(guild.id, guild_connection);
 			return guild_connection;

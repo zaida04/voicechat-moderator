@@ -8,7 +8,7 @@ module.exports = {
 		if (commandName) {
 			let cmd = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 			if(!cmd) return message.channel.send(new message.client.utilities.incorrectUsageEmbed("Sorry, but that command does not exist!"));
-			let commandEmbed = new MessageEmbed().setColor("PURPLE").setTitle(`Info for ${commandName}`);
+			let commandEmbed = new MessageEmbed().setColor("PURPLE").setTitle(`Info for ${commandName}`).setDescription(`This guild's prefix is currently: ${await message.guild.prefix}`);
 			cmd.description ? commandEmbed.addField("Description", `\`${cmd.description}\``) : null;
 			cmd.usage ? commandEmbed.addField("Usage", `\`${await message.guild.prefix}${cmd.usage}\``) : null;
 			cmd.aliases && cmd.aliases.length > 0 ? commandEmbed.addField("Aliases", `${cmd.aliases.map(x => `\`${x}\``).join(", ")}`) : null;

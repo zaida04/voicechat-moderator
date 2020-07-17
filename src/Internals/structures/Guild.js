@@ -37,14 +37,19 @@ Structures.extend("Guild", Guild => {
 		get details() {
 			return getDetails(this.client, this.id);
 		}
+		get activeConnection() {
+			return this.client.connections.guilds.get(this.id);
+		}
 		get activeVoice() {
-			return this.client.connections.guilds.get(this.id) ? this.client.connections.guilds.get(this.id).activeChannel : null;
+			return this.client.connections.guilds.get(this.id) ? this.channels.cache.get(this.client.connections.guilds.get(this.id).activeChannelID) : null;
 		}
 	};
 });
 
 async function getPrefix(client, id) {
-	return (await client.db.guilds.get(id)).settings.prefix;
+	if(!await client.db.guilds.get(id)) {
+		return (await client.db.guilds.create(id)).settings.prefix;
+	} else return (await client.db.guilds.get(id)).settings.prefix;
 }
 async function getThreshold(client, id) {
 	return (await client.db.guilds.get(id)).settings.threshold;

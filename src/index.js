@@ -1,6 +1,6 @@
 const { Client, Collection } = require("discord.js");
 const colors = require("colors");
-require("./Internals/structures/Guild");
+require("./Internals/Structures/Guild");
 const client = new Client();
 
 const { token } = require("../config");
@@ -13,6 +13,7 @@ client.utilities = require("./Internals/load/loadUtilities");
 
 client.on("ready", async () => {
 	try {
+		client.mention = new RegExp(`^(<@!?${client.user.id}>)\\s*`);
 		await require("./Internals/load/loadEvents.js")(client);
 		await require("./Internals/load/loadCommands.js")(client);
 		require("log-timestamp");

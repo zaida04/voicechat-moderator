@@ -1,22 +1,17 @@
 
-/*
 module.exports = async (oldState, newState) => {
-	let vc = oldState.guild.activeVoice;
-	if (vc) {
-		if ((newState.channel && newState.channel.id === vc.vc) || (oldState.channel && oldState.channel.id === vc.vc)) {
-			if (!oldState.channel && newState.channel) {
-				//person joins
+	let active = oldState.guild.activeVoice;
+	if(active) {
+		if ((oldState.channel && oldState.channel.id === oldState.guild.activeVoice.id) && (!newState.channel)) {
+			if(oldState.member.user.id === oldState.client.user.id) {
+				oldState.client.connections.delete(oldState.guild);
 			}
-			if (oldState.channel && !newState.channel) {
-				if (oldState.channel.members.size === 1 && oldState.channel.members.first().id === oldState.member.client.user.id)
-					//person leaves
-			} else {
-				//no one but bot in channel
+			if(oldState.channel.members.filter(x => !x.bot).size === 1 && oldState.channel.members.first().id === oldState.member.client.user.id) {
+				return await oldState.guild.me.voice.connection.disconnect();
 			}
 		}
-		if (oldState.member.id === oldState.member.client.id && oldState.channel && !newState.channel) {
-			//bot leaves
+		if (!oldState.member.user.bot && !oldState.channel && (newState.channel && newState.channel.id === newState.guild.activeVoice.id)) {
+			newState.guild.activeConnection.add(newState.member);
 		}
 	}
 };
-*/

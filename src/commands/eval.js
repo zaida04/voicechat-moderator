@@ -1,3 +1,5 @@
+const { inspect } = require("util");
+
 module.exports = {
 	"name": "eval",
 	"execute": async (message, args) => {
@@ -6,8 +8,8 @@ module.exports = {
 			let code = args.join(" ");
 			let evaled = eval(code);
 			if (typeof evaled !== "string")
-				evaled = require("util").inspect(evaled);
-			message.channel.send(clean(evaled), {
+				evaled = inspect(evaled);
+			message.channel.send(clean(evaled).slice(0, 1850), {
 				code: "xl"
 			});
 		} catch (e) {
