@@ -18,7 +18,7 @@ module.exports = {
 		if (message.member.voice.channel) {
 			try {
 				let connection = await message.member.voice.channel.join();
-				let members = connection.channel.members.filter(x => x.user.id !== message.client.user.id);
+				let members = connection.channel.members.filter(x => x.user.id !== message.client.user.id && !x.user.bot);
 				connection.play(new SilentFrame(), {type: "opus"});
 				members.forEach(member => {
 					message.client.connections.add(message.guild).add(member);
