@@ -2,6 +2,7 @@ module.exports = {
 	"name": "unmute",
 	"description": "unmute a muted person",
 	"aliases": ["um"],
+	"permissions": ["MUTE_MEMBERS"],
 	"category": "voice",
 	"usage": "<mention>",
 	"execute": async (message) => {
