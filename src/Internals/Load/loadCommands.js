@@ -6,7 +6,7 @@ module.exports = async (client) => {
 		const command = require(`../../commands/${file}`);
 		return client.commands.set(command.name, command);
 	});
-	console.log("Commands Loaded: ".bold.brightBlue);
+	console.log("\nCommands Loaded: ".bold.brightBlue);
 	let table_cmds = client.commands.map(x => {
 		return {
 			"name": x.name,
