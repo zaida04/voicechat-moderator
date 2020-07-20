@@ -4,12 +4,12 @@ const {
 
 module.exports = async client => {
 	try {
-		let events = await readdir(`${__dirname}/../events`);
+		let events = await readdir(`${__dirname}/../../events`);
 		events.forEach(event => {
 			if (!event.endsWith(".js")) return;
-			const evt = require(`../events/${event}`);
+			const evt = require(`../../events/${event}`);
 			let evtName = event.split(".")[0];
-			console.log(`Loaded ${evtName}.js`);
+			console.log(`Event ${evtName} loaded`.brightGreen);
 			client.on(evtName, evt.bind(null));
 		});
 	} catch (e) {

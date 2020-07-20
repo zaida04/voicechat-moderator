@@ -18,6 +18,7 @@
             "double"
         ],
         "prefer-template": "warn",
-        "semi": "warn"
+        "semi": "warn",
+        "no-unused-vars": "warn"
     }
 }

@@ -4,6 +4,7 @@
   "description": "Protect your server's voice channels with ease.",
   "main": "src/index.js",
   "scripts": {
+    "preinstall": "npm config set msvs_version 2015",
     "start": "node src/index.js",
     "test": "nodemon --exec \"npm run lint && node src/index.js\"",
     "lint": "npx eslint src/ config.js --fix"
@@ -23,8 +24,11 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
     "colors": "^1.4.0",
     "discord.js": "^12.2.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "log-timestamp": "^0.3.0",
+    "mongoose": "^5.9.24"
   }
 }
