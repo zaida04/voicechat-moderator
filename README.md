@@ -8,7 +8,7 @@
 
 ## What is VoiceChat Moderator?
 VoiceChat Moderator is a discord bot with the sole purpose of **preventing obnoxious intrusions in a discord voice channel**
-
+When a person exceeds a customizable threshold, a customizable punishment can be carried out against the user.
 
 ## Contributing
 All contributions are welcome, just open a PR!
