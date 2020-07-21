@@ -7,7 +7,7 @@
 </div>
 
 ## What is VoiceChat Moderator?
-VCM is a discord bot with the sole purpose of preventing things such as "earrape", "bass boosting", or any other obnoxious intrusion in a public discord voice channel.
+VoiceChat Moderator is a discord bot with the sole purpose of **preventing obnoxious intrusions in a discord voice channel**
 
 
 ## Contributing
