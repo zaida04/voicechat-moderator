@@ -9,6 +9,7 @@ on:
     branches:
       - master
       - dev
+      - v3
 jobs:
   lint:
     name: ESLint
