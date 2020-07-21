@@ -1,4 +1,7 @@
 <p>List of Main Commands:</p>
+
+You can do `help [command]` to get full information from the bot on a command
+
 <table>
 <thead>
 <tr>
@@ -49,7 +52,7 @@
 <td style="text-align:center">permissions</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-<td style="text-align:center">MANAGE GUILD (manage server)</td>
+<td style="text-align:center">MANAGE_GUILD (manage server)</td>
 <td style="text-align:center">Get list of permissions that the bot has in current guild</td>
 <tr>
 <td style="text-align:center">unmute</td>
