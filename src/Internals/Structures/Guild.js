@@ -1,7 +1,7 @@
 const {
 	Structures
 } = require("discord.js");
-
+ 
 Structures.extend("Guild", Guild => {
 	return class extends Guild {
 		constructor(...args) {
