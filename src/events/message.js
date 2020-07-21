@@ -1,4 +1,4 @@
-const incorrectUsageEmbed = require("../internals/Embed/incorrectUsageEmbed");
+const incorrectUsageEmbed = require("../Internals/Embed/incorrectUsageEmbed");
 
 module.exports = async message => {
 	if(message.author.bot) return;
