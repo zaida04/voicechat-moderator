@@ -4,6 +4,7 @@ module.exports = {
 	"name": "settings",
 	"usage": "[option] [valuetosetto]",
 	"category": "admin",
+	"permissions": ["MANAGE_GUILD"],
 	"description": "Change the settings of the bot.",
 	"execute": async (message, [option, setvalue]) => {
 		let {
