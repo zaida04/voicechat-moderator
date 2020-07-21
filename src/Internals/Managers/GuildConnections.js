@@ -1,7 +1,7 @@
 const {
 	Collection
 } = require("discord.js");
-const Connection = require("../voice/Connection");
+const Connection = require("../Voice/Connection");
 
 class GuildConnections {
 	constructor(data) {
