@@ -1,4 +1,4 @@
-<img src="banner.png"></img>
+![banner](banner.png)
 
 ## What is VoiceChat Moderator?
   VoiceChat Moderator is a Discord Bot that improves the quality of voice channels by removing the possibility of things such as "earrape", "bass boosting", or any other things that cause an impleasant experience for those in a voice channel.
