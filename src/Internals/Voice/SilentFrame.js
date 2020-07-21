@@ -8,5 +8,5 @@ class SilentFrame extends Readable {
 		this.destroy();
 	}
 }
-
+ 
 module.exports = SilentFrame;

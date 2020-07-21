@@ -1,4 +1,4 @@
-const { successEmbed } = require("../Internals/load/loadUtilities");
+const { successEmbed } = require("../Internals/Load/loadUtilities");
 
 module.exports = async(guild) => {
 	if(!(await guild.client.db.guilds.get(guild.id))) guild.client.db.guilds.create(guild.id);

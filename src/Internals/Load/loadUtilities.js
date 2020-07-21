@@ -1,6 +1,6 @@
-const incorrectUsageEmbed = require("../embed/incorrectUsageEmbed");
-const successEmbed = require("../embed/successEmbed");
+const incorrectUsageEmbed = require("../Embed/incorrectUsageEmbed");
+const successEmbed = require("../Embed/successEmbed");
 
 module.exports = {
 	successEmbed, incorrectUsageEmbed
-};
+}; 

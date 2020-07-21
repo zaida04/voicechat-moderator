@@ -13,5 +13,5 @@ module.exports = async (client) => {
 			"category": x.category ? x.category : "no category"
 		};
 	});
-	console.table(table_cmds);
+	console.table(table_cmds); 
 };
