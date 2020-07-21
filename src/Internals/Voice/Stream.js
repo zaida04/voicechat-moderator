@@ -10,7 +10,7 @@ class Stream {
 	async init() {
 		let threshold = (await this.connection.channel.guild.threshold) === "high" ? 2000 : (await this.connection.channel.guild.threshold) === "medium" ? 1750 : 1500;
 		let count = 5;
-		let muted = false;
+		let muted = false; 
 		this.stream.on("data", async (data) => {
 			if (count !== 0) return count--;
 			else count = 5;
