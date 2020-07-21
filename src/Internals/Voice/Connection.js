@@ -7,7 +7,7 @@ class Connection {
 		this._member = data.member;
 		this._channel = data.channel;
 		this._stream = (new Stream(data.connection, data.member.id)).init();
-	}
+	} 
 	get guild() {
 		return this._guild;
 	}

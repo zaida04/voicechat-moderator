@@ -3,4 +3,4 @@ const successEmbed = require("../embed/successEmbed");
 
 module.exports = {
 	successEmbed, incorrectUsageEmbed
-};
+}; 

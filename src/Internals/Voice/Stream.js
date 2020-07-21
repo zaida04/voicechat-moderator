@@ -4,7 +4,7 @@ class Stream {
 		this._stream = connection.receiver.createStream(id, {
 			"mode": "pcm",
 			"end": "manual"
-		});
+		}); 
 		this._member = connection.channel.members.get(id);
 	}
 	async init() {

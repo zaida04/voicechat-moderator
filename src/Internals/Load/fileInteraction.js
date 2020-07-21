@@ -6,4 +6,4 @@ module.exports = {
 	"writeFile": promisify(fs.writeFile),
 	"readFile": promisify(fs.readFile),
 	"writeFileSync": fs.writeFileSync
-};
+}; 
