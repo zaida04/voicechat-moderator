@@ -1,3 +1,5 @@
+[Go back to Home Page](http://voice.smld.xyz)
+
 <p>List of Main Commands:</p>
 
 You can do `help [command]` to get full information from the bot on a command
