@@ -3,16 +3,23 @@ const Stream = require("./Stream");
 class Connection {
 	constructor(data) {
 		this._guild = data.guild;
-		this._connection = data.connection;
+		this._guildConnection = data.guildConnection;
+		this._voiceConnection = data.connection;
 		this._member = data.member;
 		this._channel = data.channel;
-		this._stream = (new Stream(data.connection, data.member.id)).init();
+		this._stream = (new Stream(this, data.member.id)).init();
 	} 
 	get guild() {
 		return this._guild;
 	}
 	get channel() {
 		return this._channel;
+	}
+	get voiceConnection() {
+		return this._voiceConnection;
+	}
+	get guildConnection() {
+		return this._guildConnection;
 	}
 	get connection() {
 		return this._connection;

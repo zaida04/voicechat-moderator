@@ -12,15 +12,17 @@ class DatabaseGuildManager {
 			"settings": {
 				"prefix": "g!",
 				"threshold": "medium",
-				"punishment": "vc_mute"
+				"punishment": "vc_mute",
+				"notify": null
 			}
 		})).save();
 	}
-	async edit(id, {prefix = null, threshold = null, punishment = null}) {
+	async edit(id, {prefix = null, threshold = null, punishment = null, notify = null}) {
 		let update = {};
 		prefix ? update["settings.prefix"] = prefix : null;
 		threshold ? update["settings.threshold"] = threshold: null;
 		punishment ? update["settings.punishment"] = punishment: null;
+		notify ? update["settings.notifyChannel"] = notify : null;
 		return await Guild.findByIdAndUpdate(id, update);
 	}
 	delete(id) {
