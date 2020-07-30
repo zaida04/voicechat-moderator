@@ -1,4 +1,4 @@
-const SilentFrame = require("../Internals/voice/SilentFrame");
+const SilentFrame = require("../Internals/Voice/SilentFrame");
 
 module.exports = {
 	"name": "join",

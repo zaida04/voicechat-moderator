@@ -1,6 +1,8 @@
-const incorrectUsageEmbed = require("../embed/incorrectUsageEmbed");
-const successEmbed = require("../embed/successEmbed");
+const incorrectUsageEmbed = require("../Embed/incorrectUsageEmbed");
+const successEmbed = require("../Embed/successEmbed");
+const warnEmbed = require("../Embed/warnEmbed");
+const punishEmbed = require("../Embed/punishEmbed");
 
 module.exports = {
-	successEmbed, incorrectUsageEmbed
-};
+	successEmbed, incorrectUsageEmbed, warnEmbed, punishEmbed
+}; 

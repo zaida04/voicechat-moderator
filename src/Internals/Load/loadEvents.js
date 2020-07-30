@@ -15,4 +15,4 @@ module.exports = async client => {
 	} catch (e) {
 		console.log(`An error occured while loading in the events. Process terminated. ${e}`);
 	}
-};
+}; 

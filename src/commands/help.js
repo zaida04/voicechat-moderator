@@ -3,7 +3,6 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
 	"name": "help",
 	"usage": "[command]",
-	"permissions": ["MUTE_MEMBERS", "MANAGE_GUILD"],
 	"execute": async (message, [commandName]) => {
 		if (commandName) {
 			let cmd = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

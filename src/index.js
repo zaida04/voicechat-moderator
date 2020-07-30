@@ -9,11 +9,11 @@ const ConnectionsManager = require("./Internals/Managers/ConnectionsManager");
 client.db = new DatabaseManager();
 client.commands = new Collection();
 client.connections = new ConnectionsManager(client);
-client.utilities = require("./Internals/load/loadUtilities");
+client.utilities = require("./Internals/Load/loadUtilities");
 
 (async() => {
-	await require("./Internals/load/loadEvents.js")(client);
-	await require("./Internals/load/loadCommands.js")(client);
+	await require("./Internals/Load/loadEvents.js")(client);
+	await require("./Internals/Load/loadCommands.js")(client);
 })();
 
 client.on("ready", async () => {

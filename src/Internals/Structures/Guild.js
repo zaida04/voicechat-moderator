@@ -1,7 +1,7 @@
 const {
 	Structures
 } = require("discord.js");
-
+ 
 Structures.extend("Guild", Guild => {
 	return class extends Guild {
 		constructor(...args) {
@@ -31,6 +31,14 @@ Structures.extend("Guild", Guild => {
 				"punishment": value
 			});
 		}
+		get notifyChannel() {
+			return getNotifyChannel(this.client, this.id);
+		}
+		setNotify(id) {
+			return this.client.db.guilds.edit(this.id, {
+				"notify": id
+			});
+		}
 		get settings() {
 			return getSettings(this.client, this.id);
 		}
@@ -45,6 +53,10 @@ Structures.extend("Guild", Guild => {
 		}
 	};
 });
+
+async function getNotifyChannel(client, id) {
+	return (await client.db.guilds.get(id)).settings.notifyChannel;
+}
 
 async function getPrefix(client, id) {
 	if(!await client.db.guilds.get(id)) {

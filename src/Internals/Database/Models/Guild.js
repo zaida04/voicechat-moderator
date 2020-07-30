@@ -5,7 +5,11 @@ const Guild = new Schema({
 	settings: {
 		prefix: String,
 		threshold: String,
-		punishment: String
+		punishment: String,
+		notifyChannel: {
+			type: String,
+			default: null
+		}
 	}
 });
 

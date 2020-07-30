@@ -4,6 +4,7 @@ module.exports = {
 	"name": "settings",
 	"usage": "[option] [valuetosetto]",
 	"category": "admin",
+	"permissions": ["MANAGE_GUILD"],
 	"description": "Change the settings of the bot.",
 	"execute": async (message, [option, setvalue]) => {
 		let {
@@ -38,8 +39,17 @@ module.exports = {
 			} else response = `Threshold Level: \`${await message.guild.threshold}\``;
 			break;
 		}
+		case "notify":
+		case "notifychannel": {
+			if (setvalue) {
+				if (message.mentions.channels.size === 0) return message.channel.send(new incorrectUsageEmbed("Sorry, but you haven't mentioned a channel!"));
+				message.guild.setNotify(message.mentions.channels.first().id);
+				changed = `Notify Channel has been set to ${message.mentions.channels.first()}`;
+			} else response = `Notify Channel: ${await message.guild.notifyChannel ? message.guild.channels.cache.get(await message.guild.notifyChannel) : "none"}`;
+			break;
+		}
 		default: {
-			return message.channel.send(`Settings options: \`prefix\`, \`punishment\`, \`threshold\`.\nYou can do \`${await message.guild.prefix}settings [option]\` to see what the current value is for that option.`);
+			return message.channel.send(`Settings options: \`prefix\`, \`punishment\`, \`threshold\`, \`notify\`.\nYou can do \`${await message.guild.prefix}settings [option]\` to see what the current value is for that option.`);
 		}
 		}
 		if (changed) {
