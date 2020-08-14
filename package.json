@@ -29,6 +29,6 @@
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "log-timestamp": "^0.3.0",
-    "mongoose": "^5.9.26"
+    "mongoose": "^5.9.29"
   }
 }
