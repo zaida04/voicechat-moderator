@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "CommonJS",
+        "allowJs": true,
+        "checkJs": true,
+        "outDir": "./dist",
+        "composite": true,
+        "removeComments": true,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitAny": true,
+        "resolveJsonModule": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "files": [
+        "package.json",
+    ],
+    "include": [
+        "src/",
+        "config.js"
+    ],
+    "exclude": [
+        "node_modules/**"
+    ]
+}
