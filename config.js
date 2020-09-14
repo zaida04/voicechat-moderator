@@ -6,4 +6,4 @@ env_variables.forEach(x => {
 	env_variables_object[x] = process.env[x.toUpperCase()];
 });
 
-module.exports = env_variables_object;
+export default env_variables_object;
